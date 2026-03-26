@@ -1,0 +1,16 @@
+[Unit]
+Description=flashing pdb service
+After=network.target
+
+[Service]
+# Usa la ruta absoluta tanto de bash como de tu script
+Type=oneshot
+ExecStart=/bin/bash /home/uct/Desktop/flash_pdb.sh
+# 'on-failure' reinicia el script si se cierra con error
+Restart=on-failure
+RemainAfterExit=yes
+# Define el usuario que ejecutará el script (opcional)
+User=uct
+
+[Install]
+WantedBy=multi-user.target
