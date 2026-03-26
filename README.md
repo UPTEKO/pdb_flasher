@@ -1,2 +1,10 @@
 # pdb_flasher
-Necessary files and instructions for setting up a pdb flashing device with the correct swift arms software
+1 - Install ubuntu with user: "uct" and password: "mordor"
+2 - Install openocd
+	sudo apt update
+	sudo apt install openocd
+3 - Copy the detatch_arm_no_interrupt.elf and flash_pdb.sh in Desktop
+4 - Copy flash_pdb.service in /etc/systemd/system
+5 - sudo systemctl daemon-reload
+6 - sudo systemctl enable flash_pdb.service
+7 - sudo systemctl start flash_pdb.service
